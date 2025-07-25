@@ -1,25 +1,30 @@
-
-/*  Assignment:  Restaurant Food Ordering System
-
-   FoodSangar.java
-
-   Name: Sardar Wali Sangar 
-
-   File Created on March 1, 2023   
-
-*/
-  
-
+/**
+ * This class implements a restaurant food ordering system that allows users to
+ * select dishes from a menu, specify the number of servings, and calculate the
+ * total cost including tax and an optional tip. The system displays a menu,
+ * processes user input, and outputs the order details.
+ *
+ * @author Sardar Wali Sangar
+ * @version 1.0
+ * @since March 1, 2023
+ */
 import java.util.Scanner;
 
 public class FoodSangar {
+    /**
+     * The main method runs the restaurant food ordering system. It displays a menu
+     * of available dishes, prompts the user to select dishes and specify servings,
+     * calculates the subtotal, adds tax, and includes an optional tip based on user
+     * input. Finally, it displays the order details and confirms the order placement.
+     *
+     * @param args command-line arguments (not used in this application)
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         // Display the menu
         System.out.println("Food Menu");
-        System.out.printf("%6s %32s \n","Item", "Price(in dollars)" );
-
+        System.out.printf("%6s %32s \n", "Item", "Price(in dollars)");
         System.out.printf("%d %s %11.2f \n", 1, "Chicken Curry", 10.69);
         System.out.printf("%d %s %12.2f \n", 2, "Shrimp Curry", 14.25);
         System.out.printf("%d %s %19.2f \n", 3, "Naan", 3.59);
@@ -31,15 +36,11 @@ public class FoodSangar {
         System.out.printf("%d %s %11.2f \n", 9, "Chana Masala", 9.45);
         System.out.printf("%d %s %17.2f \n", 10, "Kheer", 4.99);
 
-
         // Prompt the user to enter the number of dishes they want to order
         System.out.print("\nHow many different dishes would you like to order today? ");
         int numDishes = scanner.nextInt();
-
         scanner.nextLine();
         double price = 0.0;
-        //double tax = 0.0;
-        //double tip = 0.0;
 
         // Loop through each dish and ask for the number of servings
         for (int i = 1; i <= numDishes; i++) {
@@ -89,6 +90,7 @@ public class FoodSangar {
                     break;
             }
         }
+
         // Prompt the user to enter the tax percentage
         System.out.print("\nEnter the tax %: ");
         double taxPercent = scanner.nextDouble();
@@ -102,7 +104,7 @@ public class FoodSangar {
 
         double tipAmount = 0;
         double tipPercent = 0;
-        if (addTip == 'y'){
+        if (addTip == 'y') {
             // Prompt the user to enter the tip percentage
             System.out.print("\nEnter tip % [0-100]: ");
             tipPercent = scanner.nextDouble();
@@ -117,21 +119,12 @@ public class FoodSangar {
         System.out.printf("Price: $ %.2f\n", price);
         System.out.printf("Tax (%.1f%%): $%.2f\n", taxPercent, taxAmount);
         System.out.printf("Tip (%.1f%%): $%.2f\n", tipPercent, tipAmount);
-
         System.out.println("----------------------------------------");
         System.out.printf("Total Amount: $ %.2f\n", totalAmount);
 
-       System.out.println("\nYour order has been placed and will be delivered soon!");
+        System.out.println("\nYour order has been placed and will be delivered soon!");
 
-
-
-// Close the scanner
+        // Close the scanner
         scanner.close();
-
-
-
-
-
-
     }
 }
