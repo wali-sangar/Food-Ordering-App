@@ -1,7 +1,3 @@
-Here’s a professional `README.md` for your GitHub project based on your `FoodSangar` Java class:
-
----
-
 # 🍽️ FoodSangar - Java Restaurant Ordering System
 
 **Author:** Sardar Wali Sangar
